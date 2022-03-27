@@ -1,0 +1,21 @@
+<div class="block">
+  <button (click)="listarTodosItens()">GET ALL</button>
+</div>
+
+<div class="block">
+  <input #description type="text" placeholder="description" class="campo">
+  <button (click)="adicionarItem(description.value); description.value=''" class="botao">POST</button>
+</div>
+
+<div class="block">
+  <input #id type="text" placeholder="id" class="campo">
+  <button (click)="removerItem(id.value); id.value=''" class="botao">DELETE</button>
+</div>
+
+
+<div class="block">
+  <input #idDelete type="text" placeholder="id" class="campo">
+  <input #descriptionDelete type="text" placeholder="description" class="campo">
+  <input #done type="checkbox" [checked]="done.checked">
+  <button (click)="atualizarItem(idDelete.value, descriptionDelete.value, done.checked); idDelete.value=''; descriptionDelete.value=''" class="botao">PATCH</button>
+</div>
